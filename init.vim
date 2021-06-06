@@ -1,15 +1,12 @@
 " NeoVim Config
 "
 " start of vim-plug
-" specify a directory for plugins
 call plug#begin('~/.config/nvim/plugged')
-    " tools
     Plug 'tpope/vim-fugitive'
     Plug 'preservim/nerdtree'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    "Plug 'morhetz/gruvbox'
-    Plug 'NLKNguyen/papercolor-theme'
+    Plug 'rust-lang/rust.vim'
 call plug#end()
 " end of vim-plug
 
@@ -17,10 +14,6 @@ call plug#end()
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='powerlineish'
-
-" active theme
-set background=dark
-colorscheme PaperColor
 
 " history
 set history=100
@@ -36,6 +29,9 @@ let mapleader = "\<space>"
 " fast save
 nmap <leader>w :w!<cr>
 
+" toggle NerdTree
+nmap <leader>n :NERDTreeToggle<cr>
+
 " visual prompt for command completion
 set wildmenu
 
@@ -45,7 +41,7 @@ set showcmd
 set modeline
 set ruler
 set number
-set title
+"set title
 set laststatus=2
 set cmdheight=1
 
@@ -57,7 +53,7 @@ set expandtab
 set smarttab
 set autoindent
 set smartindent
-set wrap
+set nowrap 
 
 " searching
 set showmatch
@@ -69,7 +65,7 @@ set smartcase
 set hidden
 
 " timeout
-set timeoutlen=300
+set timeoutlen=200
 
 " turn backup off
 set nobackup
@@ -94,7 +90,7 @@ nnoremap E $
 
 " tab navigation
 nnoremap tl :tabnext<cr>
-nnoremap th :tabprev<cr>
+nnoremap th :tabprevious<cr>
 nnoremap tn :tabnew<cr>
 nnoremap to :tabclose<cr>
 
@@ -109,10 +105,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " resize window
-nnoremap <Up> :resize +2<CR> 
-nnoremap <Down> :resize -2<CR>
-nnoremap <Left> :vertical resize -2<CR>
-nnoremap <Right> :vertical resize +2<CR>
+"nnoremap <Up> :resize +2<CR> 
+"nnoremap <Down> :resize -2<CR>
+"nnoremap <Left> :vertical resize -2<CR>
+"nnoremap <Right> :vertical resize +2<CR>
 
 " y and d put stuff into system clipboard
 set clipboard=unnamed,unnamedplus
