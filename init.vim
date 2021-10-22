@@ -6,14 +6,39 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'rust-lang/rust.vim'
+    Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 " end of vim-plug
+
+" Theme Config
+set t_Co=256    " This may or may not be needed
+set background=dark
+colorscheme PaperColor
+let g:PaperColor_Theme_Options = {
+\   'theme': {
+\       'default.dark': {
+\           'transparent_background': 1
+\       }
+\   },
+\   'language': {
+\       'python': {
+\           'highlight_builtins': 1
+\       },
+\       'cpp': {
+\           'highlight_standard_library': 1
+\       },
+\       'c': {
+\           'highlight_builtins': 1
+\       }
+\   }
+\}
 
 " Airline Config
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='powerlineish'
+"let g:airline_theme='powerlineish'
+"let g:airline_theme='papercolor'
+let g:airline_theme='minimalist'
 
 " history
 set history=100
